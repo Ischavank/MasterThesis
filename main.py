@@ -1,4 +1,24 @@
-# main2.py
+"""
+main.py
+
+Entry point for the greenhouse robot system
+
+The robot follows a tape line and triggers an analysis pipeline when a QR is detected
+1) Pause robot motion
+2) Read local sensor (BME280)
+3) Retrieve external weather data (API)
+4) Capture plant image and analyise via Plant API (optional in testing mode)
+5) Append a row to a CSV log file
+6) Resume robot (unless a stop QR ID is detected)
+
+Hardware assumptions:
+- Raspberry Pi with two cameras (line following + plant/QR camera)
+- BME280 sensor connected
+- Robot chassis accessible via HTTP endpoint (192.168.4.1)
+
+"""
+
+
 from robot_vision_SystemTesting import start_qr_vision, pause_robot, resume_robot
 import time
 import requests

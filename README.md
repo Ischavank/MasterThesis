@@ -77,7 +77,9 @@ This data is not used for real-time control but serves as input for offline mach
 The trained models are stored in the following directories:
 
 `data/model/BasicModel`
+
 `data/model/IntermediateModel`
+
 `data/model/FinalModel`
 
 These models are trained after data collection and are used to generate irrigation advice based on historical sensor data, plant health indicators, and environmental conditions.

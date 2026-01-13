@@ -84,3 +84,10 @@ Robot testing mode
 
 System testing mode
 - 'python3 mainSystemTesting.py'
+
+---
+
+## Thesis
+
+
+This repository accompanies a Master Thesis project on an autonomous greenhouse robot for plant monitoring and irrigation decision support

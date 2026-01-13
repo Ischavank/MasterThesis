@@ -8,6 +8,7 @@ The robot follows a tape line and triggers an analysis pipeline when a QR is det
 2) Read local sensor (BME280)
 3) Retrieve external weather data (API)
 4) Capture plant image and analyise via Plant API (optional in testing mode)
+5) Add soilmoisture content placeholder value
 5) Append a row to a CSV log file
 6) Resume robot (unless a stop QR ID is detected)
 

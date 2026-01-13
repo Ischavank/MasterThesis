@@ -55,7 +55,7 @@ for name, model in models.items():
     print(" Accuracy:", f"{acc:.4f}")
     print(" ROC AUC Score:", f"{roc_auc_score(y, y_proba):.4f}")
     print(" Confusion Matrix:\n", confusion_matrix(y, y_pred))
-    print("📈 Classification Report:\n", classification_report(y, y_pred))
+    print(" Classification Report:\n", classification_report(y, y_pred))
 
     print(" Summary Metrics:")
     print(f"  Precision (macro):   {prec_macro:.4f}")

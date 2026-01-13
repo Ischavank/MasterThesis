@@ -1,3 +1,26 @@
+"""
+evaluate_saved_models.py
+
+Offline evaluation script for pre-trained classification models.
+
+This script loads previously trained models (stored as .pkl files), applies them to a
+test dataset, and (optionally) computes evaluation metrics if ground truth labels
+are available in the test file.
+
+Models:
+- Logistic Regression
+- Random Forest
+- XGBoost
+
+Test data:
+- Loaded from a CSV file
+- Uses the same feature columns as during training
+
+Outputs:
+- Printed metrics (if 'validation' column exists)
+- Optional CSV export with predictions (currently commented out)
+"""
+
 import pandas as pd
 import joblib
 from sklearn.metrics import (

@@ -1,0 +1,51 @@
+# =====================
+# Python
+# =====================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# =====================
+# Operating system
+# =====================
+.DS_Store
+Thumbs.db
+
+# =====================
+# IDEs / Editors
+# =====================
+.vscode/
+.idea/
+
+# =====================
+# Data & logs (thesis experiments)
+# =====================
+data/**/*.csv
+data/**/*.log
+data/**/*.json
+logs/
+outputs/
+
+# =====================
+# Machine learning models
+# =====================
+*.pt
+*.onnx
+*.h5
+
+# =====================
+# Raspberry Pi / hardware
+# =====================
+*.db
+*.bak
+
+# =====================
+# Secrets (never commit)
+# =====================
+.env
+*.env

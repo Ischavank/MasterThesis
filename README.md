@@ -37,54 +37,50 @@ The robot performs the following tasks:
 
 The repository is organised by subsystem and by execution mode:
 
-- **Entry points (run modes)**
- - `main.py` — autonomous run (full system)
- - `mainDataGathering.py` — data collection mode
- - `mainRobotTesting.py` — robot testing mode
- - `mainSystemTesting.py` — system integration testing mode
+**Entry points (run modes)**
+- `main.py` — autonomous run (full system)
+- `mainDataGathering.py` — data collection mode
+- `mainRobotTesting.py` — robot testing mode
+- `mainSystemTesting.py` — system integration testing mode
 
-- **Perception (vision)**
- - `robot_vision.py` — tape line following
- - `qr_vision_Real.py` — QR detection for real operation
- - `qr_vision_RobotTesting.py` — QR detection during robot testing
- - `robot_vision_SystemTesting.py` — vision code used in system tests
+**Perception (vision)**
+- `robot_vision.py` — tape line following
+- `qr_vision_Real.py` — QR detection for real operation
+- `qr_vision_RobotTesting.py` — QR detection during robot testing
+- `robot_vision_SystemTesting.py` — vision code used in system tests
 
-- **Sensors & logging**
- - `sensorBM280.py` — BME280 interface
- - `soil_moist.py` — soil moisture sensor interface
- - `data_logger.py` — logging utilities
+**Sensors & logging**
+- `sensorBM280.py` — BME280 interface
+- `soil_moist.py` — soil moisture sensor interface
+- `data_logger.py` — logging utilities
 
-- **Models**
- - `model_usage.py` — model loading/inference
- - `confidence.py` — confidence handling / thresholds
- - `model/` — model-related outputs/artifacts
+**Models**
+- `model_usage.py` — model loading/inference
+- `confidence.py` — confidence handling / thresholds
+- `model/` — model-related outputs/artifacts
 
-- **APIs**
- - `plant_api.py` — plant health/plant database interface
- - `weather_api.py` — weather data interface
+**APIs**
+- `plant_api.py` — plant health/plant database interface
+- `weather_api.py` — weather data interface
 
-- **Data and experiments**
- - `data/` — logged data (may be excluded from Git depending on size)
- - `testing/` — scripts and experiments used during development/testing
+**Data and experiments**
+- `data/` — logged data (may be excluded from Git depending on size)
+- `testing/` — scripts and experiments used during development/testing
 
 ---
 
-## Running the systems
+## Running the System
 
-> Note: The code is designed for Raspberry Pi hardware (camera + sensors). Some scripts require connected hardware to run.
+Note: The code is designed for Raspberry Pi hardware (cameras + sensors). Some scripts require connected hardware to run.
 
-### Autonomous operation (full system)
-```bash
-python main.py
+Autonomous operation (full system)
+Command: python main.py
 
-### Data gathering mode
-```bash
-python mainDataGathering.py
+Data gathering mode
+Command: python mainDataGathering.py
 
-### Robot testing mode
-```bash
-python mainRobotTesting.py
+Robot testing mode
+Command: python mainRobotTesting.py
 
-### System testing mode
-```bash
-python mainSystemTesting.py
+System testing mode
+Command: python mainSystemTesting.py

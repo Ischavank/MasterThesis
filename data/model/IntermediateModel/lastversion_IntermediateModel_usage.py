@@ -45,7 +45,7 @@ for name, path in model_paths.items():
     test_df["predicted_validation"] = y_pred
     test_df["predicted_confidence"] = y_proba
 #    test_df.to_csv(f"test_with_predictions_{name.replace(' ', '_')}.csv", index=False)
-#    print(f"✅ Predictions saved to 'test_with_predictions_{name.replace(' ', '_')}.csv'")
+#    print(f" Predictions saved to 'test_with_predictions_{name.replace(' ', '_')}.csv'")
 
     # Evaluation
     if has_ground_truth:
@@ -62,4 +62,4 @@ for name, path in model_paths.items():
         print(" Confusion Matrix:\n", confusion_matrix(y_true, y_pred))
         print("CClassification Report:\n", classification_report(y_true, y_pred))
     else:
-        print("⚠️ Column 'validation' not found in test file, skipping metrics.")
+        print(" Column 'validation' not found in test file, skipping metrics.")

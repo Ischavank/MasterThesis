@@ -1,3 +1,24 @@
+"""
+lastversion_BasicModel.py
+
+This script evaluates multiple machine learning models for binary classification
+of irrigation suitability based on plant health and water-related indicators.
+
+The models are trained and evaluated using cross-validation on previously
+collected greenhouse robot data. 
+
+Models evaluated:
+- Logistic Regression
+- Random Forest
+- XGBoost
+
+Evaluation metrics:
+- Accuracy
+- ROC AUC
+- Confusion matrix
+- Classification report
+"""
+
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt

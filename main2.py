@@ -10,19 +10,19 @@ from sensorBM280 import bm_sensors
 import datetime
 
 def on_qr_detected(qr_data):
-    print(f"\n🔍 Callback: QR '{qr_data}' detected! Starting analysis...")
+    print(f"\n Callback: QR '{qr_data}' detected! Starting analysis...")
 
     pause_robot()
 
     try:
         requests.get("http://192.168.4.1/js?json=" + '{"T":0}', timeout=0.2)
-        print("🛑 Robot stopped")
+        print("Robot stopped")
     except requests.exceptions.RequestException as e:
         print(f"[ERROR] Couldn't stop robot: {e}")
 
     time.sleep(1)  # Pause briefly
 
-    print("📸 Analyzing environment and collecting data...")
+    print("Analyzing environment and collecting data...")
 
     weather_api_key = "eyJvcmciOiI1ZTU1NGUxOTI3NGE5NjAwMDEyYTNlYjEiLCJpZCI6ImVkZTIzYzExYjIyYzQ5NDlhYzZjYjQ3ZmQxMDUwY2UxIiwiaCI6Im11cm11cjEyOCJ9"
     q1h_lux = get_q1h_de_bilt(weather_api_key)
@@ -61,7 +61,7 @@ def on_qr_detected(qr_data):
 
     log_plant_data(row)
 
-    print(f"✅ QR Analysis Done | Flag: {flag} | Confidence: {plant_health_conf:.2f}\n")
+    print(f"QR Analysis Done | Flag: {flag} | Confidence: {plant_health_conf:.2f}\n")
 
     resume_robot()
 

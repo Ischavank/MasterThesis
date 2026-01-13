@@ -1,4 +1,21 @@
-# Step 2, create the confidences (change them if not accurate, and change input&output file)
+"""
+lastversion_ModifySensoryData.py
+
+This script implements a plant-knowledge (rule-based) transformation that maps
+environmental sensor values to confidence scores (0–100). The scores reflect how
+close the measured values are to plant-specific target ranges. A weighted average
+is used to compute an overall "Plant_health" score.
+
+Purpose in the IntermediateModel workflow:
+- Soil moisture is collected separately and combined with environmental readings.
+- After data collection, this script converts sensor readings into comparable scores.
+- The resulting scores are saved to a new CSV for downstream machine learning steps.
+
+Outputs:
+- Plant_health (weighted mean confidence)
+- Individual confidence scores for temperature, humidity, light, and soil moisture
+"""
+
 
 import csv
 from datetime import datetime

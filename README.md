@@ -76,11 +76,9 @@ This data is not used for real-time control but serves as input for offline mach
 
 The trained models are stored in the following directories:
 
-'data/model/BasicModel'
-
-'data/model/IntermediateModel'
-
-'data/model/FinalModel'
+`data/model/BasicModel`
+`data/model/IntermediateModel`
+`data/model/FinalModel`
 
 These models are trained after data collection and are used to generate irrigation advice based on historical sensor data, plant health indicators, and environmental conditions.
 The separation between data collection and model inference reflects the experimental nature of the project and allows different model versions to be evaluated without modifying the robot control software.
@@ -92,16 +90,16 @@ The separation between data collection and model inference reflects the experime
 Note: The code is designed for Raspberry Pi hardware (cameras + sensors). Some scripts require connected hardware to run.
 
 Autonomous operation (full system)
-- 'python3 main.py'
+- `python3 main.py`
 
 Data gathering mode
-- 'python3 mainDataGathering.py'
+- `python3 mainDataGathering.py`
 
 Robot testing mode
-- 'python3 mainRobotTesting.py'
+- `python3 mainRobotTesting.py`
 
 System testing mode
-- 'python3 mainSystemTesting.py'
+- `python3 mainSystemTesting.py`
 
 ---
 

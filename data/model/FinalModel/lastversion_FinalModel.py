@@ -1,3 +1,33 @@
+"""
+lastversion_FinalModel.py
+
+Offline evaluation script for the "FinalModel" using greenhouse robot data.
+
+This script trains and evaluates multiple binary classification models to predict
+a validation label ("yes" / "no") based on environmental and soil-related features:
+
+Input features:
+- temperature
+- humidity
+- sun_light
+- soil_moist
+
+Target variable:
+- validation (mapped to 1 for "yes", 0 for "no")
+
+Evaluation method:
+- Stratified K-Fold cross-validation (5 folds)
+- Cross-validated predictions (class labels + probabilities)
+
+Reported metrics:
+- Accuracy
+- ROC AUC
+- Confusion matrix
+- Full classification report
+- Summary metrics (precision/recall/F1 in macro and weighted averages)
+
+"""
+
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import cross_val_predict, StratifiedKFold

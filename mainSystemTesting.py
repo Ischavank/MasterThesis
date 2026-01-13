@@ -23,13 +23,13 @@ if testing:
 
 def on_qr_detected(photo_label):
     qr_data = photo_label.split('_')[1]
-    print(f"\n🔍 Callback: R {qr_data} detected! Starting analysis...")
+    print(f"\nCallback: R {qr_data} detected! Starting analysis...")
 
     # Pausing robot
     pause_robot()
     try:
         requests.get("http://192.168.4.1/js?json=" + '{"T":0}', timeout=0.2)
-        print("🛑 Robot stopped")
+        print("Robot stopped")
     except requests.exceptions.RequestException as e:
         print(f"[ERROR] Couldn't stop robot: {e}")
 

@@ -1,4 +1,28 @@
-# step 1, train a model on simulated data (change in the bottom the joblib.dump to another model if wanted)
+"""
+train_intermediate_models.py
+
+This script loads a training dataset from the IntermediateModel directory and trains
+multiple binary classification models to predict the 'validation' label based on:
+
+Input features:
+- Plant_health
+- API_health
+
+Target variable:
+- validation (expected values: "y" or "n", mapped to 1 and 0)
+
+Evaluation:
+- Stratified 5-fold cross-validation
+- Metrics: Accuracy, ROC AUC, confusion matrix, classification report,
+  and summary metrics (precision/recall/F1 in macro and weighted averages)
+
+Model persistence:
+- Each model is fit on the full dataset after cross-validation and saved using joblib:
+  - LR_model.pkl
+  - RF_model.pkl
+  - XGB_model.pkl
+  """
+
 
 import pandas as pd
 import numpy as np

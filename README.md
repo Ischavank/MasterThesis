@@ -74,13 +74,13 @@ The repository is organised by subsystem and by execution mode:
 Note: The code is designed for Raspberry Pi hardware (cameras + sensors). Some scripts require connected hardware to run.
 
 Autonomous operation (full system)
-'python main.py'
+- 'python main.py'
 
 Data gathering mode
-'python mainDataGathering.py'
+- 'python mainDataGathering.py'
 
 Robot testing mode
-'python mainRobotTesting.py'
+- 'python mainRobotTesting.py'
 
 System testing mode
-'python mainSystemTesting.py'
+- 'python mainSystemTesting.py'

@@ -37,11 +37,11 @@ for name, model in models.items():
     
     # Get predictions
     y_pred = cross_val_predict(model, X, y, cv=cv)
-    y_proba = cross_val_predict(model, X, y, cv=cv, method='predict_proba')[:, 1]  # ✅ Probability for class 1
+    y_proba = cross_val_predict(model, X, y, cv=cv, method='predict_proba')[:, 1]  # Probability for class 1
 
     # Metrics
     acc = accuracy_score(y, y_pred)
-    auc = roc_auc_score(y, y_proba)  # ✅ ROC AUC Score
+    auc = roc_auc_score(y, y_proba)  # ROC AUC Score
     prec_macro = precision_score(y, y_pred, average='macro')
     recall_macro = recall_score(y, y_pred, average='macro')
     f1_macro = f1_score(y, y_pred, average='macro')

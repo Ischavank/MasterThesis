@@ -69,7 +69,7 @@ The repository is organised by subsystem and by execution mode:
 
 ---
 
-**Machine Learning Models and Data Workflow
+**Machine Learning Models and Data Workflow**
 
 Soil moisture data is collected separately during robot operation and logged together with environmental and plant-related information.
 This data is not used for real-time control but serves as input for offline machine learning models.

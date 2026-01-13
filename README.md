@@ -69,6 +69,24 @@ The repository is organised by subsystem and by execution mode:
 
 ---
 
+**Machine Learning Models and Data Workflow
+
+Soil moisture data is collected separately during robot operation and logged together with environmental and plant-related information.
+This data is not used for real-time control but serves as input for offline machine learning models.
+
+The trained models are stored in the following directories:
+
+'data/model/BasicModel'
+
+'data/model/IntermediateModel'
+
+'data/model/FinalModel'
+
+These models are trained after data collection and are used to generate irrigation advice based on historical sensor data, plant health indicators, and environmental conditions.
+The separation between data collection and model inference reflects the experimental nature of the project and allows different model versions to be evaluated without modifying the robot control software.
+
+---
+
 ## Running the System
 
 Note: The code is designed for Raspberry Pi hardware (cameras + sensors). Some scripts require connected hardware to run.

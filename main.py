@@ -10,14 +10,14 @@ import datetime
 
 # Called when a plant is detected
 def on_plant_detected(plant_label):
-    print(f"\n🌿 Callback: Detected {plant_label}. Preparing to pause...")
+    print(f"\n Callback: Detected {plant_label}. Preparing to pause...")
 
     pause_robot()
 
     # Step 1: Stop robot briefly (send stop command)
     try:
         requests.get("http://192.168.4.1/js?json=" + '{"T":0}', timeout=0.2)
-        print("🛑 Robot stopped for image capture.")
+        print("Robot stopped for image capture.")
     except requests.exceptions.RequestException as e:
         print(f"[ERROR] Couldn't stop robot: {e}")
 
@@ -25,7 +25,7 @@ def on_plant_detected(plant_label):
     time.sleep(1)
 
     # Step 3: Resume robot driving (it resumes via control thread anyway)
-    print("📸 Capturing photo and starting analysis...")
+    print("Capturing photo and starting analysis...")
 
     # Step 4: Run full analysis while detection cooldown continues
     weather_api_key = "eyJvcmciOiI1ZTU1NGUxOTI3NGE5NjAwMDEyYTNlYjEiLCJpZCI6ImVkZTIzYzExYjIyYzQ5NDlhYzZjYjQ3ZmQxMDUwY2UxIiwiaCI6Im11cm11cjEyOCJ9"
@@ -66,8 +66,8 @@ def on_plant_detected(plant_label):
 
     log_plant_data(row)
 
-    print(f"✅ Plant Analysis Done | Flag: {flag} | Confidence: {plant_health_conf:.2f}")
-    print("⏳ Waiting 3s before allowing next detection...")
+    print(f"Plant Analysis Done | Flag: {flag} | Confidence: {plant_health_conf:.2f}")
+    print("Waiting 3s before allowing next detection...")
 
     resume_robot()
 

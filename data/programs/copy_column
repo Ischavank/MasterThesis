@@ -1,0 +1,35 @@
+import csv
+
+# File paths
+source_file = "data_processed1.csv"
+target_file = "data_raw1.csv"
+output_file = "data_raw2.csv"
+
+# Column to copy
+column_to_copy = "????"
+new_column_name = column_to_copy  # Rename here if desired
+
+# Read the column from source CSV
+with open(source_file, newline='') as src:
+    src_reader = csv.DictReader(src)
+    source_column_values = [row[column_to_copy] for row in src_reader]
+
+# Read target CSV and add the new column
+with open(target_file, newline='') as tgt:
+    tgt_reader = csv.DictReader(tgt)
+    target_rows = list(tgt_reader)
+    target_fieldnames = tgt_reader.fieldnames
+
+    # Optional: Check if lengths match
+    if len(target_rows) != len(source_column_values):
+        raise ValueError("Row count mismatch between source and target CSV files.")
+
+    # Add new column
+    for i, row in enumerate(target_rows):
+        row[new_column_name] = source_column_values[i]
+
+# Write the updated target to a new file
+with open(output_file, mode="w", newline="") as out:
+    writer = csv.DictWriter(out, fieldnames=target_fieldnames + [new_column_name])
+    writer.writeheader()
+    writer.writerows(target_rows)
